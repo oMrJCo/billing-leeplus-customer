@@ -1,13 +1,20 @@
 # LEEPLUS Sales Record
-ระบบบันทึกรายการขายแบบเรียบง่าย: วันที่, เลขบิล, ยอดขาย และรูปบิล
+ระบบบันทึกรายการขายสำหรับ LEEPLUS
 
-## V1
-- Dashboard ยอดขายวันนี้/เดือนนี้
-- บันทึกบิลพร้อมรูป
+## Production V1
+- Supabase กลาง: leeplus-production
+- Supabase Auth: Email/Password
+- ตารางแยก: billing_customers, billing_sales
+- Private Storage: billing-receipts
+- RLS: เฉพาะผู้ใช้ที่ login แล้ว
+- Dashboard ยอดวันนี้/เดือนนี้ + กราฟ 7 วัน
+- เพิ่มรายการ: วันที่ + ลูกค้า + เลขบิล + ยอดขาย + รูปบิล + หมายเหตุ
 - ป้องกันเลขบิลซ้ำ
-- ค้นหา/กรองวันที่
-- Responsive สำหรับมือถือ
-- V1 เก็บข้อมูลใน browser (localStorage) เพื่อทดสอบ UI/flow ก่อนเชื่อมฐานข้อมูลกลาง
+- ลูกค้า + ประวัติบิล + ยอดซื้อรวม
+- รายงานช่วงวันที่ + Export CSV
+- Responsive desktop/mobile
 
-## GitHub Pages
-เปิด Pages จาก Settings > Pages > Deploy from branch: main / root
+ไม่มี Product/SKU/จำนวน/ราคาต่อชิ้น
+
+## Deploy
+GitHub Pages: main / root
