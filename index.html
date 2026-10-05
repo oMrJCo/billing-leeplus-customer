@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>LEEPLUS Sales Record</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<aside><div class="brand">LEEPLUS<small>Sales Record</small></div><nav><button data-page="dashboard" class="active">ภาพรวม</button><button data-page="add">+ บันทึกการขาย</button><button data-page="list">รายการขาย</button></nav><div class="foot">ระบบบันทึกยอดขาย</div></aside>
+<main>
+<section id="dashboard" class="page active"><header><div><h1>ภาพรวม</h1><p id="todayText"></p></div><button class="primary" data-go="add">+ บันทึกการขาย</button></header>
+<div class="cards"><article><span>ยอดขายวันนี้</span><strong id="todaySales">฿0</strong></article><article><span>จำนวนบิลวันนี้</span><strong id="todayCount">0</strong></article><article><span>ยอดขายเดือนนี้</span><strong id="monthSales">฿0</strong></article><article><span>จำนวนบิลเดือนนี้</span><strong id="monthCount">0</strong></article></div>
+<div class="panel"><div class="panelhead"><h2>รายการล่าสุด</h2><button class="link" data-go="list">ดูทั้งหมด</button></div><div id="recent"></div></div></section>
+<section id="add" class="page"><header><div><h1>บันทึกการขาย</h1><p>กรอกแค่ข้อมูลที่จำเป็น แล้วบันทึกได้ทันที</p></div></header>
+<form id="saleForm" class="formcard"><label>วันที่ขาย<input id="saleDate" type="date" required></label><label>เลขบิล<input id="billNo" placeholder="เช่น IV-000123" required></label><label>ยอดขาย (บาท)<input id="amount" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" required></label>
+<label>รูปบิล<div class="upload"><input id="billImage" type="file" accept="image/*" capture="environment"><b>📷 ถ่ายรูป / เลือกรูปบิล</b><small id="fileName">JPG, PNG</small></div></label><div id="previewWrap" hidden><img id="preview"></div>
+<div class="actions"><button type="button" class="secondary" data-go="dashboard">ยกเลิก</button><button class="primary" type="submit">บันทึกรายการ</button></div></form></section>
+<section id="list" class="page"><header><div><h1>รายการขาย</h1><p>ค้นหาและตรวจสอบบิลย้อนหลัง</p></div><button class="primary" data-go="add">+ เพิ่มรายการ</button></header>
+<div class="toolbar"><input id="search" placeholder="ค้นหาเลขบิล..."><input id="filterDate" type="date"><button id="clearFilter" class="secondary">ล้างตัวกรอง</button></div><div class="panel"><div id="salesTable"></div></div></section>
+</main><dialog id="imageDialog"><button id="closeDialog">×</button><img id="dialogImage"></dialog><div id="toast"></div><script src="app.js"></script></body></html>
